@@ -13,6 +13,10 @@ class ViewController: UIViewController {
 	@IBOutlet weak var textField: UITextField!
 	@IBOutlet weak var textView: UITextView!
 	
+	@IBOutlet weak var testButtonPressed: UIButton!
+	@IBAction func testButtonPressed(sender: AnyObject) {
+		serial.sendByte(UInt8(0x1b))
+	}
 	var serial: PhonejackSerial = PhonejackSerial()
 	
 	override func viewDidLoad() {
@@ -21,7 +25,7 @@ class ViewController: UIViewController {
 		
 		NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
 		
-		serial.receivedDataHandler = {(data:Byte) -> () in
+		serial.receivedDataHandler = {(data:UInt8) -> () in
 			println("** received data:\(data)")
 			dispatch_async(dispatch_get_main_queue(), {()->() in
 				self.textView.text = self.textView.text + String(UnicodeScalar(UInt32(data)))
@@ -35,7 +39,7 @@ class ViewController: UIViewController {
 
 	func keyboardWillShow(notification: NSNotification) {
 		var info = notification.userInfo!
-		var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+		var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
 		self.bottomConstraint.constant = keyboardFrame.size.height + 20
 		self.view.layoutIfNeeded()
 	}

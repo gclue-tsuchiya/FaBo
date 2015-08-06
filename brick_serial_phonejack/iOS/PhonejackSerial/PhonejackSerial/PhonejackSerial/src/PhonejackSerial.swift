@@ -14,7 +14,7 @@ public class PhonejackSerial {
 	public let SamplingRate: Float = 48000
 	public let BitRate: Int = 9600
 	
-	public var receivedDataHandler = {(data:Byte) -> () in return}
+	public var receivedDataHandler = {(data:UInt8) -> () in return}
 	
 	private var remoteIOUnit: AudioUnit = nil
 	private var sendBuffer: Array<Bool?> = Array<Bool?>()
@@ -85,7 +85,7 @@ public class PhonejackSerial {
 		PhonejackSerial_ObjC.setObject(self);
 		var speakerRenderStruct: AURenderCallbackStruct = AURenderCallbackStruct(
 			inputProc: PhonejackSerial_ObjC.SpeakerRenderCallback(),
-			inputProcRefCon: UnsafeMutablePointer<Void>.null())
+			inputProcRefCon: nil)
 		if !errorCheck(AudioUnitSetProperty(remoteIOUnit,
 			AudioUnitPropertyID(kAudioUnitProperty_SetRenderCallback),
 			AudioUnitScope(kAudioUnitScope_Input),
@@ -129,17 +129,17 @@ public class PhonejackSerial {
 	}
 	
 	// sends a byte data
-	public func sendByte(data: Byte) {
+	public func sendByte(data: UInt8) {
 		objc_sync_enter(self)
 		
 		// start bit
 		sendBuffer.append(true)
 		
 		// data bit
-		var val: Byte = data;
-		var sf: Byte = 0x01
+		var val: UInt8 = data;
+		var sf: UInt8 = 0x01
 		for i in 0..<8 {
-			let nv: Byte = val & sf
+			let nv: UInt8 = val & sf
 			val = val >> 1
 			sendBuffer.append(nv==0)
 		}
@@ -201,12 +201,12 @@ public class PhonejackSerial {
 			
 			// make blank
 //			if data == nil {
-//				println("\(i):0")
+//				//println("\(i):0")
 //				renderDataPtr.memory = 0
 //				renderDataPtr = renderDataPtr.successor()
-////				if zerocnt++ < 9 {
-////					continue
-////				}
+//				if zerocnt++ < 9 {
+//					continue
+//				}
 //				phase = 0
 //				exwave = 0
 //				sendBuffer.removeAtIndex(0)
@@ -258,7 +258,7 @@ public class PhonejackSerial {
 	
 	private var pulsestart = false
 	private var framecnt = 0
-	private var receivedData: Byte = 0
+	private var receivedData: UInt8 = 0
 	private var exdata: Int16 = 0
 	
 	// mic render
@@ -272,11 +272,13 @@ public class PhonejackSerial {
 			inputDataPtr = inputDataPtr.successor()
 			
 //			println("\(data)")
+//			println("\(exdata)")
 //			continue
 			
 			// check if the pulse is started
 			if !pulsestart {
-				if exdata - data > 4000 {
+				let diff:Int = exdata - data
+				if diff > 4000 {
 					//println("** start!! \(exdata)")
 					pulsestart = true
 				} else {
