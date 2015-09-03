@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -487,22 +487,13 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </library>
 <library name="gclue">
 <packages>
-<package name="GAASP-G6262">
-<smd name="1" x="-1.5" y="-1.5" dx="1.5" dy="0.635" layer="1" rot="R90"/>
-<smd name="2" x="1" y="-1.5" dx="1.5" dy="0.635" layer="1" rot="R90"/>
-<smd name="3" x="-0.2" y="3.1" dx="1.5" dy="0.635" layer="1" rot="R90"/>
-<wire x1="-2.2" y1="2.5" x2="1.7" y2="2.5" width="0.127" layer="21"/>
-<wire x1="1.7" y1="2.5" x2="1.7" y2="-1" width="0.127" layer="21"/>
-<wire x1="1.7" y1="-1" x2="-2.2" y2="-1" width="0.127" layer="21"/>
-<wire x1="-2.2" y1="-1" x2="-2.2" y2="2.5" width="0.127" layer="21"/>
-</package>
 <package name="BRICK_3PIN">
-<pad name="IN/OUT" x="-2.54" y="-8.89" drill="0.8" diameter="1.4224" shape="octagon" rot="R90"/>
-<pad name="VCC" x="0" y="-8.89" drill="0.8" diameter="1.4224" shape="octagon" rot="R90"/>
-<pad name="GND" x="2.54" y="-8.89" drill="0.8" diameter="1.4224" shape="square" rot="R90"/>
-<text x="-2.54" y="-7.62" size="0.8128" layer="21" font="vector" rot="R90" align="center-left">I/O</text>
-<text x="0" y="-7.62" size="0.8128" layer="21" font="vector" rot="R90" align="center-left">VCC</text>
-<text x="2.54" y="-7.62" size="0.8128" layer="21" font="vector" rot="R90" align="center-left">GND</text>
+<pad name="IN/OUT" x="-2.54" y="-8.89" drill="1" diameter="1.778" shape="octagon" rot="R90"/>
+<pad name="VCC" x="0" y="-8.89" drill="1" diameter="1.778" shape="octagon" rot="R90"/>
+<pad name="GND" x="2.54" y="-8.89" drill="1" diameter="1.6764" shape="square" rot="R90"/>
+<text x="-2.54" y="-7.62" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">I/O</text>
+<text x="0" y="-7.62" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">VCC</text>
+<text x="2.54" y="-7.62" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">GND</text>
 <wire x1="-10.16" y1="-16.51" x2="10.16" y2="-16.51" width="0" layer="20"/>
 <wire x1="10.16" y1="-16.51" x2="12.7" y2="-13.97" width="0" layer="20" curve="90"/>
 <wire x1="12.7" y1="-13.97" x2="12.7" y2="3.81" width="0" layer="20"/>
@@ -6658,23 +6649,111 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <rectangle x1="-0.129540625" y1="0.94741875" x2="0.149859375" y2="0.9525" layer="21"/>
 <rectangle x1="-0.124459375" y1="0.9525" x2="0.144778125" y2="0.95758125" layer="21"/>
 </package>
+<package name="BRICK_3PIN_MIDDLE">
+<pad name="IN/OUT" x="-2.54" y="-8.89" drill="1" shape="long" rot="R90"/>
+<pad name="VCC" x="0" y="-8.89" drill="1" shape="long" rot="R90"/>
+<pad name="GND" x="2.54" y="-8.89" drill="1" shape="long" rot="R90"/>
+<text x="-2.54" y="-6.985" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">I/O</text>
+<text x="0" y="-6.985" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">VCC</text>
+<text x="2.54" y="-6.985" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">GND</text>
+<wire x1="-16.51" y1="10.16" x2="-16.51" y2="-12.7" width="0" layer="20"/>
+<wire x1="-16.51" y1="-12.7" x2="-13.97" y2="-15.24" width="0" layer="20" curve="90"/>
+<wire x1="-13.97" y1="-15.24" x2="13.97" y2="-15.24" width="0" layer="20"/>
+<wire x1="13.97" y1="-15.24" x2="16.51" y2="-12.7" width="0" layer="20" curve="90"/>
+<wire x1="16.51" y1="-12.7" x2="16.51" y2="10.16" width="0" layer="20"/>
+<wire x1="-5.08" y1="-17.78" x2="-5.08" y2="-8.89" width="0.127" layer="21"/>
+<pad name="P$5" x="-12.7" y="10.16" drill="3" diameter="3.81"/>
+<pad name="P$6" x="12.7" y="10.16" drill="3" diameter="3.81"/>
+<pad name="P$7" x="-12.7" y="-11.43" drill="3" diameter="3.81"/>
+<pad name="P$8" x="12.7" y="-11.43" drill="3" diameter="3.81"/>
+<wire x1="-16.51" y1="10.16" x2="16.51" y2="10.16" width="0" layer="20" curve="-180"/>
+<circle x="-12.7" y="10.16" radius="2.55" width="0.127" layer="51"/>
+<circle x="-12.7" y="-11.43" radius="2.55" width="0.127" layer="51"/>
+<circle x="12.7" y="10.16" radius="2.55" width="0.127" layer="51"/>
+<circle x="12.7" y="-11.43" radius="2.55" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="-8.89" x2="-5.08" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="5.08" y1="-8.89" x2="5.08" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="-22.29" x2="-3.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-3.8" y1="-22.29" x2="-2.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-2.8" y1="-22.29" x2="2.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="2.8" y1="-22.29" x2="3.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="3.8" y1="-22.29" x2="5.08" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-3.8" y1="-18.49" x2="-3.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-3.8" y1="-18.49" x2="3.8" y2="-18.49" width="0.127" layer="51"/>
+<wire x1="3.8" y1="-18.49" x2="3.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-2.8" y1="-22.29" x2="-2.8" y2="-19.89" width="0.127" layer="51"/>
+<wire x1="2.8" y1="-22.29" x2="2.8" y2="-19.89" width="0.127" layer="51"/>
+<wire x1="-2.8" y1="-19.89" x2="2.8" y2="-19.89" width="0.127" layer="51"/>
+<wire x1="5.08" y1="-17.78" x2="5.08" y2="-8.89" width="0.127" layer="21"/>
+<wire x1="-3.81" y1="-8.89" x2="-5.08" y2="-8.89" width="0.127" layer="21"/>
+<wire x1="5.08" y1="-8.89" x2="3.81" y2="-8.89" width="0.127" layer="21"/>
+</package>
+<package name="BRICK_3PIN_BIG">
+<pad name="IN/OUT" x="-2.54" y="-8.89" drill="1" shape="long" rot="R90"/>
+<pad name="VCC" x="0" y="-8.89" drill="1" shape="long" rot="R90"/>
+<pad name="GND" x="2.54" y="-8.89" drill="1" shape="long" rot="R90"/>
+<text x="-2.54" y="-6.985" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">I/O</text>
+<text x="0" y="-6.985" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">VCC</text>
+<text x="2.54" y="-6.985" size="0.8128" layer="21" font="vector" ratio="10" rot="R90" align="center-left">GND</text>
+<wire x1="-20.32" y1="8.89" x2="-20.32" y2="-13.97" width="0" layer="20"/>
+<wire x1="-20.32" y1="-13.97" x2="-17.78" y2="-16.51" width="0" layer="20" curve="90"/>
+<wire x1="-17.78" y1="-16.51" x2="17.78" y2="-16.51" width="0" layer="20"/>
+<wire x1="17.78" y1="-16.51" x2="20.32" y2="-13.97" width="0" layer="20" curve="90"/>
+<wire x1="20.32" y1="-13.97" x2="20.32" y2="8.89" width="0" layer="20"/>
+<wire x1="-5.08" y1="-17.78" x2="-5.08" y2="-8.89" width="0.127" layer="21"/>
+<pad name="P$5" x="-16.51" y="8.89" drill="3" diameter="3.81"/>
+<pad name="P$6" x="16.51" y="8.89" drill="3" diameter="3.81"/>
+<pad name="P$7" x="-16.51" y="-12.7" drill="3" diameter="3.81"/>
+<pad name="P$8" x="16.51" y="-12.7" drill="3" diameter="3.81"/>
+<wire x1="-20.32" y1="8.89" x2="20.32" y2="8.89" width="0" layer="20" curve="-180"/>
+<circle x="-16.51" y="8.89" radius="2.55" width="0.127" layer="51"/>
+<circle x="-16.51" y="-12.7" radius="2.55" width="0.127" layer="51"/>
+<circle x="16.51" y="8.89" radius="2.55" width="0.127" layer="51"/>
+<circle x="16.51" y="-12.7" radius="2.55" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="-8.89" x2="-5.08" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="5.08" y1="-8.89" x2="5.08" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="-22.29" x2="-3.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-3.8" y1="-22.29" x2="-2.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-2.8" y1="-22.29" x2="2.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="2.8" y1="-22.29" x2="3.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="3.8" y1="-22.29" x2="5.08" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-3.8" y1="-18.49" x2="-3.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-3.8" y1="-18.49" x2="3.8" y2="-18.49" width="0.127" layer="51"/>
+<wire x1="3.8" y1="-18.49" x2="3.8" y2="-22.29" width="0.127" layer="51"/>
+<wire x1="-2.8" y1="-22.29" x2="-2.8" y2="-19.89" width="0.127" layer="51"/>
+<wire x1="2.8" y1="-22.29" x2="2.8" y2="-19.89" width="0.127" layer="51"/>
+<wire x1="-2.8" y1="-19.89" x2="2.8" y2="-19.89" width="0.127" layer="51"/>
+<wire x1="5.08" y1="-17.78" x2="5.08" y2="-8.89" width="0.127" layer="21"/>
+<wire x1="-3.81" y1="-8.89" x2="-5.08" y2="-8.89" width="0.127" layer="21"/>
+<wire x1="5.08" y1="-8.89" x2="3.81" y2="-8.89" width="0.127" layer="21"/>
+</package>
+<package name="BRICK_3PIN_CONNECTOR">
+<pad name="IN/OUT" x="2.54" y="0" drill="1" diameter="1.778" shape="octagon" rot="R270"/>
+<pad name="VCC" x="0" y="0" drill="1" diameter="1.778" shape="octagon" rot="R270"/>
+<pad name="GND" x="-2.54" y="0" drill="1" diameter="1.6764" shape="square" rot="R270"/>
+<text x="2.54" y="1.27" size="0.8128" layer="51" font="vector" rot="R90" align="center-left">I/O</text>
+<text x="0" y="1.27" size="0.8128" layer="51" font="vector" rot="R90" align="center-left">VCC</text>
+<text x="-2.54" y="1.27" size="0.8128" layer="51" font="vector" rot="R90" align="center-left">GND</text>
+<wire x1="5.08" y1="7.62" x2="5.08" y2="0" width="0.127" layer="21"/>
+<wire x1="5.08" y1="0" x2="5.08" y2="13.4" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="0" x2="-5.08" y2="13.4" width="0.127" layer="51"/>
+<wire x1="5.08" y1="13.4" x2="3.8" y2="13.4" width="0.127" layer="51"/>
+<wire x1="3.8" y1="13.4" x2="2.8" y2="13.4" width="0.127" layer="51"/>
+<wire x1="2.8" y1="13.4" x2="-2.8" y2="13.4" width="0.127" layer="51"/>
+<wire x1="-2.8" y1="13.4" x2="-3.8" y2="13.4" width="0.127" layer="51"/>
+<wire x1="-3.8" y1="13.4" x2="-5.08" y2="13.4" width="0.127" layer="51"/>
+<wire x1="3.8" y1="9.6" x2="3.8" y2="13.4" width="0.127" layer="51"/>
+<wire x1="3.8" y1="9.6" x2="-3.8" y2="9.6" width="0.127" layer="51"/>
+<wire x1="-3.8" y1="9.6" x2="-3.8" y2="13.4" width="0.127" layer="51"/>
+<wire x1="2.8" y1="13.4" x2="2.8" y2="11" width="0.127" layer="51"/>
+<wire x1="-2.8" y1="13.4" x2="-2.8" y2="11" width="0.127" layer="51"/>
+<wire x1="2.8" y1="11" x2="-2.8" y2="11" width="0.127" layer="51"/>
+<wire x1="-5.08" y1="7.62" x2="-5.08" y2="0" width="0.127" layer="21"/>
+<wire x1="3.81" y1="0" x2="5.08" y2="0" width="0.127" layer="21"/>
+<wire x1="-5.08" y1="0" x2="-3.81" y2="0" width="0.127" layer="21"/>
+</package>
 </packages>
 <symbols>
-<symbol name="GAASP-G6262">
-<wire x1="-7.62" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
-<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="5.08" y1="-5.08" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="0" y1="5.08" x2="0" y2="7.62" width="0.254" layer="94"/>
-<pin name="PIN1" x="-5.08" y="-10.16" visible="pin" length="middle" rot="R90"/>
-<pin name="PIN2" x="5.08" y="-10.16" visible="pin" length="middle" rot="R90"/>
-<pin name="PIN3" x="0" y="10.16" visible="pin" length="middle" rot="R270"/>
-</symbol>
 <symbol name="A4L-LOC">
 <wire x1="256.54" y1="3.81" x2="256.54" y2="8.89" width="0.1016" layer="94"/>
 <wire x1="256.54" y1="8.89" x2="256.54" y2="13.97" width="0.1016" layer="94"/>
@@ -15086,23 +15165,6 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="GAASP-G6262">
-<gates>
-<gate name="G$1" symbol="GAASP-G6262" x="2.54" y="2.54"/>
-</gates>
-<devices>
-<device name="" package="GAASP-G6262">
-<connects>
-<connect gate="G$1" pin="PIN1" pad="1"/>
-<connect gate="G$1" pin="PIN2" pad="2"/>
-<connect gate="G$1" pin="PIN3" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="A4L-LOC">
 <description>FRAME A4</description>
 <gates>
@@ -15122,7 +15184,37 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <gate name="G$1" symbol="BRICK_3PIN" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="BRICK_3PIN">
+<device name="_NORMAL" package="BRICK_3PIN">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="I/O" pad="IN/OUT"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_MIDDLE" package="BRICK_3PIN_MIDDLE">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="I/O" pad="IN/OUT"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_BIG" package="BRICK_3PIN_BIG">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="I/O" pad="IN/OUT"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="_CONNECTOR" package="BRICK_3PIN_CONNECTOR">
 <connects>
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="I/O" pad="IN/OUT"/>
@@ -21944,6 +22036,56 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </deviceset>
 </devicesets>
 </library>
+<library name="GClueSensor">
+<packages>
+<package name="GAASP-G6262">
+<smd name="1" x="-1.27" y="-2.85" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="2" x="1.27" y="-2.85" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<smd name="3" x="0" y="2.85" dx="1.5" dy="0.7" layer="1" rot="R90"/>
+<wire x1="-2.1" y1="2.1" x2="2.1" y2="2.1" width="0" layer="20"/>
+<wire x1="2.1" y1="2.1" x2="2.1" y2="-2.1" width="0" layer="20"/>
+<wire x1="2.1" y1="-2.1" x2="-2.1" y2="-2.1" width="0" layer="20"/>
+<wire x1="-2.1" y1="-2.1" x2="-2.1" y2="2.1" width="0" layer="20"/>
+</package>
+</packages>
+<symbols>
+<symbol name="GAASP-G6262">
+<wire x1="-7.62" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="0" y1="5.08" x2="0" y2="7.62" width="0.254" layer="94"/>
+<pin name="PIN1" x="-5.08" y="-10.16" visible="pin" length="middle" rot="R90"/>
+<pin name="PIN2" x="5.08" y="-10.16" visible="pin" length="middle" rot="R90"/>
+<pin name="PIN3" x="0" y="10.16" visible="pin" length="middle" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="HAMAMATSU-GAASP-G6262" prefix="U">
+<description>GaAsP G6262</description>
+<gates>
+<gate name="G$1" symbol="GAASP-G6262" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="GAASP-G6262">
+<connects>
+<connect gate="G$1" pin="PIN1" pad="1"/>
+<connect gate="G$1" pin="PIN2" pad="2"/>
+<connect gate="G$1" pin="PIN3" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -21955,24 +22097,23 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </classes>
 <parts>
 <part name="R1" library="SparkFun" deviceset="RESISTOR" device="0603-RES" value="100K"/>
-<part name="U$1" library="gclue" deviceset="GAASP-G6262" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
 <part name="U$2" library="gclue" deviceset="A4L-LOC" device=""/>
-<part name="J1" library="gclue" deviceset="BRICK_3PIN" device=""/>
+<part name="J1" library="gclue" deviceset="BRICK_3PIN" device="_NORMAL"/>
 <part name="U$3" library="gclue" deviceset="LOGO_OSHW_T" device="-M"/>
 <part name="U$4" library="FaBo" deviceset="LOGO_FABO" device="-M"/>
+<part name="U1" library="GClueSensor" deviceset="HAMAMATSU-GAASP-G6262" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="251.46" y="5.08" size="2.54" layer="94" align="bottom-center">Beta2</text>
+<text x="251.46" y="5.08" size="2.54" layer="94" align="bottom-center">1.0</text>
 </plain>
 <instances>
 <instance part="R1" gate="G$1" x="139.7" y="86.36" rot="R270"/>
-<instance part="U$1" gate="G$1" x="152.4" y="96.52" rot="R90"/>
 <instance part="GND1" gate="1" x="139.7" y="73.66"/>
 <instance part="GND2" gate="1" x="106.68" y="73.66"/>
 <instance part="P+1" gate="VCC" x="106.68" y="109.22"/>
@@ -21981,15 +22122,16 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <instance part="J1" gate="G$1" x="78.74" y="96.52"/>
 <instance part="U$3" gate="G$1" x="208.28" y="12.7"/>
 <instance part="U$4" gate="G$1" x="162.56" y="22.86"/>
+<instance part="U1" gate="G$1" x="152.4" y="96.52" rot="R90"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="IN_OUT" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="PIN2"/>
 <wire x1="162.56" y1="101.6" x2="165.1" y2="101.6" width="0.1524" layer="91"/>
 <label x="165.1" y="101.6" size="1.778" layer="95"/>
+<pinref part="U1" gate="G$1" pin="PIN2"/>
 </segment>
 <segment>
 <wire x1="86.36" y1="101.6" x2="96.52" y2="101.6" width="0.1524" layer="91"/>
@@ -22012,7 +22154,6 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 </net>
 <net name="VCC" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="PIN3"/>
 <wire x1="139.7" y1="96.52" x2="142.24" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="139.7" y1="91.44" x2="139.7" y2="96.52" width="0.1524" layer="91"/>
@@ -22020,6 +22161,7 @@ Basic schematic elements and footprints for 0603, 1206, and PTH resistors.</desc
 <pinref part="P+2" gate="VCC" pin="VCC"/>
 <wire x1="139.7" y1="96.52" x2="121.92" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="96.52" x2="121.92" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PIN3"/>
 </segment>
 <segment>
 <pinref part="P+1" gate="VCC" pin="VCC"/>
